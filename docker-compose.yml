@@ -1,0 +1,16 @@
+version: '2'
+
+services:
+  vpn:
+    image: jun3/vpn-ipsec
+    restart: always
+    env_file:
+      - ./vpn.env
+    ports:
+      - "500:500/udp"
+      - "4500:4500/udp"
+    privileged: true
+    hostname: vpn-ipsec
+    container_name: vpn-ipsec
+    volumes:
+      - /lib/modules:/lib/modules:ro
