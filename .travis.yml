@@ -34,6 +34,8 @@ script:
       -d --privileged vpn;
     fi'
   - sleep 15
+  - docker images
+  - docker ps -a
   - docker ps | grep "$TESTID"
   - docker logs "$TESTID"
   - docker exec -it "$TESTID" netstat -anpu | grep pluto
