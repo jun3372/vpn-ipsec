@@ -6,7 +6,7 @@ WORKDIR /opt/src
 COPY ./vpnsetup.sh  /opt/src
 
 RUN apt-get update && apt-get dist-upgrade \
-    && sudo sh /opt/src/vpnsetup.sh 
+    && sh /opt/src/vpnsetup.sh 
 #     && apt-get -yqq autoremove \
 #     && apt-get -y clean \
 #     && rm -rf /var/lib/apt/lists/*
