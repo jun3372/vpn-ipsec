@@ -4,6 +4,7 @@ LABEL maintainer="哲学 <zhoujun3372@gmail.com>"
 WORKDIR /opt/src
 
 RUN apt-get update && apt-get dist-upgrade \
+     && apt-get install curl \
      && curl https://raw.githubusercontent.com/hwdsl2/setup-ipsec-vpn/master/vpnsetup.sh -o vpnsetup.sh \
      && sudo sh vpnsetup.sh \
      && apt-get -yqq autoremove \
